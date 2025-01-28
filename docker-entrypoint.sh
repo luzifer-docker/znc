@@ -18,7 +18,7 @@ maincfg=/data/configs/znc.conf
 HideVersion = true
 LoadModule = webadmin
 Skin = dark-clouds
-Version = 1.8.2
+Version = 1.9.1
 
 <Listener l>
   Port = {{  env "LISTEN_PORT" | default "16667" }}
@@ -44,5 +44,4 @@ Version = 1.8.2
 EOF
 }
 
-chown -R znc:znc /data
-exec gosu znc znc -d /data -f
+exec znc -d /data -f
