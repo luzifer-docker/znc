@@ -2,11 +2,11 @@
 set -euxo pipefail
 
 makepkgs=(
-	curl
+  curl
 )
 
 runpkgs=(
-	znc
+  znc
 )
 
 # Install required package
@@ -17,8 +17,7 @@ curl -sSfLo /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/downloa
 chmod +x /usr/local/bin/gosu
 
 # Add korvike for template processing
-curl -sSfL "https://github.com/Luzifer/korvike/releases/download/v${KORVIKE_VERSION}/korvike_linux_amd64.tar.gz" | tar -xz -C /usr/local/bin
-mv /usr/local/bin/korvike_linux_amd64 /usr/local/bin/korvike
+curl -sSfL "https://github.com/Luzifer/korvike/releases/download/v${KORVIKE_VERSION}/korvike_linux_amd64.tgz" | tar -xz -C /usr/local/bin
 
 # Remove make-only packages
 apk --no-cache del "${makepkgs[@]}"
